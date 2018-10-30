@@ -13,27 +13,26 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 text-center">
-                <h2>Personas</h2>
+                <h2>Servicios</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
             	<h:form>
-				<h:dataTable value="#{personMb.all}" var="person" styleClass="table">
+				<h:dataTable value="#{servicioMB.all}" var="servicio" styleClass="table">
 				   <h:column>    				
 				      <f:facet name = "header">id</f:facet>    				
-				      #{person.id}
+				      #{servicio.id}
 				   </h:column>				   
 				   <h:column>
 				      <f:facet name = "header">Nombre</f:facet>
-				      #{person.name}
+				      #{servicio.nombre}
 				   </h:column>				   
 				   <h:column>
-				      <f:facet name = "header">Edad</f:facet>
-				      #{person.age}
+				      <f:facet name = "header">Descripcion</f:facet>
+				      #{servicio.descripcion}
 				   </h:column>		   
-				  
 				</h:dataTable>
 				</h:form>
             </div>
