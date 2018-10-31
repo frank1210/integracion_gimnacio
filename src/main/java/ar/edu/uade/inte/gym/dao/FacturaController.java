@@ -1,7 +1,6 @@
 package ar.edu.uade.inte.gym.dao;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -35,17 +34,15 @@ public class FacturaController extends EntityController<Factura>{
 			return factura;
 		}
 		
-		public List<Factura> facturarSocios(){
+		public void facturarSocios(){
 			try {
-				List<Factura> facturas = new ArrayList<Factura>();
 				List<Socio> socios = socioController.getAll();
 				for(Socio socio: socios){
-					facturas.add(facturar(socio));
+					create(facturar(socio));
 				}
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			return null;
 		}
 
 	

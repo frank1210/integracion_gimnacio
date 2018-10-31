@@ -18,19 +18,14 @@ public class FacturasMB implements Serializable{
 	private static final long serialVersionUID = -8888780667484643240L;
 	
 	@Inject
-	private  FacturaController facturasController;
-	
-	private List<Factura> facturas;
-	
-	@Inject
 	private  FacturaController facturaController;
 
 	@PostConstruct
 	public void init() {
-		facturas = facturaController.facturarSocios();
+		facturaController.facturarSocios();
 	}
 	
 	public List<Factura> getAll() {
-		return facturas;
+		return facturaController.getAll();
 	}
 }
