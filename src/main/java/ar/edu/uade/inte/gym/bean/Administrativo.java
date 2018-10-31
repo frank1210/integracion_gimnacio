@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 public class Administrativo extends Empleado{
 	
 	private int presentismo;
-
+	
 	public int getPresentismo() {
 		return presentismo;
 	}
@@ -14,5 +14,6 @@ public class Administrativo extends Empleado{
 	public void setPresentismo(int presentismo) {
 		this.presentismo = presentismo;
 	}
+
 	
 }

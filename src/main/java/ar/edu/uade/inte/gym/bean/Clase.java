@@ -15,7 +15,7 @@ public class Clase implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 
 	@ManyToOne
 	private TipoDeClase tipoDeClase;
@@ -27,7 +27,7 @@ public class Clase implements Serializable{
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
