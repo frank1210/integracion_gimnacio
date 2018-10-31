@@ -1,5 +1,6 @@
 package ar.edu.uade.inte.gym.view;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
@@ -14,7 +15,9 @@ import ar.edu.uade.inte.gym.exception.Invalid;
 
 @Named
 @SessionScoped
-public class ServicioMB {
+public class ServicioMB implements Serializable{
+
+	private static final long serialVersionUID = -1995073883183596044L;
 
 	private Servicio servicio;
 

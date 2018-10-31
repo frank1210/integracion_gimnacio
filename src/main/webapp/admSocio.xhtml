@@ -19,10 +19,13 @@
 
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 text-right">
-		       <h:outputLink  styleClass="btn btn-success" value="nuevoSocio.xhtml">Nuevo Socio
-		 	      <i class="fa fa-plus"></i>
-		       </h:outputLink>	
-            </div>    
+	            <h:form>
+			       <h:commandLink styleClass="btn btn-success" action="#{socioMB.showCreateView()}">Nuevo Socio
+			 	      <i class="fa fa-plus"></i>
+			       </h:commandLink>
+		       </h:form>	
+            </div>  
+              
         </div>
 
         <div class="row">
@@ -59,14 +62,10 @@
 				   </h:column>
 				   <h:column>
 				       <f:facet name = "header">Acciones</f:facet>
-				       <h:outputLink styleClass="btn btn-xs btn-warning btn-sq-xs" value="editarSocio.xhtml" p:data-click-on="enter">
+				       <h:commandLink styleClass="btn btn-xs btn-warning btn-sq-xs" 
+				       		action="#{socioMB.showEditView(socio)}" p:data-click-on="enter">
 				 	      <i class="fa fa-pencil" aria-hidden="true"></i>
-				 	      <f:param name="id" value="#{user.id}" /> 
-				       </h:outputLink>
-					   <h:outputLink styleClass="btn btn-xs btn-primary btn-sq-xs" value="editarServicio.xhtml" p:data-click-on="enter">
-				 	      <i class="fa fa-book" aria-hidden="true"></i>
-				 	      <f:param name="id" value="#{socio.id}" /> 
-				       </h:outputLink>						   
+				       </h:commandLink>					   
 				   </h:column>
 				</h:dataTable>
 				</h:form>

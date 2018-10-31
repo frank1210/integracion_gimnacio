@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
@@ -16,13 +18,14 @@ public class Socio extends Persona implements Serializable{
 	
 	private static final long serialVersionUID = 1635523978951895899L;
 
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.MERGE,fetch=FetchType.EAGER)
 	private List<Servicio> servicios = new ArrayList<>();
 
-	@ManyToOne
-	private Abono abonos;
+	@ManyToOne(cascade=CascadeType.MERGE)
+	private Abono abono;
 	
 	private boolean aptoFisico;
+	
 	
 	public List<Servicio> getServicios() {
 		return servicios;
@@ -32,14 +35,6 @@ public class Socio extends Persona implements Serializable{
 		this.servicios = servicios;
 	}
 
-	public Abono getAbonos() {
-		return abonos;
-	}
-
-	public void setAbonos(Abono abonos) {
-		this.abonos = abonos;
-	}
-
 	public boolean isAptoFisico() {
 		return aptoFisico;
 	}
@@ -47,7 +42,13 @@ public class Socio extends Persona implements Serializable{
 	public void setAptoFisico(boolean aptoFisico) {
 		this.aptoFisico = aptoFisico;
 	}
-	
-	
+
+	public Abono getAbono() {
+		return abono;
+	}
+
+	public void setAbono(Abono abono) {
+		this.abono = abono;
+	}
 	
 }
