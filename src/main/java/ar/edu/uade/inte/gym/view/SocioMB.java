@@ -26,10 +26,6 @@ public class SocioMB implements Serializable{
 
 	private Socio socio = new Socio();
 
-	private List<Servicio> servicios;
-	
-	private List<Abono> abonos;
-	
 	private long servicioSeleccionado;
 	
 	private long abonoSeleccionado;
@@ -45,12 +41,6 @@ public class SocioMB implements Serializable{
 	@Inject
 	private  AbonoController abonoController;
 
-	@PostConstruct
-	public void init() {
-		servicios = servicioController.getAll();
-		abonos = abonoController.getAll();
-	}
-	
 	public List<Socio> getAll() {
 		return socioController.getAll();
 	}
@@ -124,11 +114,7 @@ public class SocioMB implements Serializable{
 	}
 
 	public List<Servicio> getServicios() {
-		return servicios;
-	}
-
-	public void setServicios(List<Servicio> servicios) {
-		this.servicios = servicios;
+		return servicioController.getAll();
 	}
 
 	public long getServicioSeleccionado() {
@@ -140,11 +126,7 @@ public class SocioMB implements Serializable{
 	}
 
 	public List<Abono> getAbonos() {
-		return abonos;
-	}
-
-	public void setAbonos(List<Abono> abonos) {
-		this.abonos = abonos;
+		return abonoController.getAll();
 	}
 
 	public long getAbonoSeleccionado() {

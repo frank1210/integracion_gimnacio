@@ -26,8 +26,9 @@
 				       </h:commandLink>
 	               </div>
 			       <div class="row">
-				      	<h:outputLink styleClass="btn btn-primary" value="facturarSocios.xhtml">Generar Facturas
-				        </h:outputLink>
+				      	<h:commandLink styleClass="btn btn-primary" 
+				      		action="#{facturasMB.facturarTodo()}">Generar Facturas
+				        </h:commandLink>
 			       </div>
 		       </h:form>	
             </div>  

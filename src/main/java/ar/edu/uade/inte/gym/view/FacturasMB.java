@@ -3,7 +3,6 @@ package ar.edu.uade.inte.gym.view;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,9 +19,9 @@ public class FacturasMB implements Serializable{
 	@Inject
 	private  FacturaController facturaController;
 
-	@PostConstruct
-	public void init() {
+	public String facturarTodo() {
 		facturaController.facturarSocios();
+		return "facturarSocios";
 	}
 	
 	public List<Factura> getAll() {

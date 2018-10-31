@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 text-right">
 	            <h:form>
-			       <h:outputLink styleClass="btn btn-default" value="admSocios.xhtml"> Volver
+			       <h:outputLink styleClass="btn btn-default" value="admSocio.xhtml"> Volver
 			       </h:outputLink>
 		       </h:form>	
             </div>  
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
             	<h:form>
-				<h:dataTable value="#{facturaMB.all}"  var = "factura" styleClass="table">
+				<h:dataTable value="#{facturasMB.all}"  var = "factura" styleClass="table">
 				   <h:column>    				
 				      <f:facet name = "header">id</f:facet>    				
 					  #{factura.socio.id}
@@ -53,13 +53,6 @@
 				   <h:column>
 				      <f:facet name = "header">Total</f:facet>
 				       #{factura.monto}
-				   </h:column>
-				   <h:column>
-				       <f:facet name = "header">Acciones</f:facet>
-				       <h:commandLink styleClass="btn btn-xs btn-warning btn-sq-xs" 
-				       		action="#{socioMB.showEditView(socio)}" p:data-click-on="enter">
-				 	      <i class="fa fa-pencil" aria-hidden="true"></i>
-				       </h:commandLink>					   
 				   </h:column>
 				</h:dataTable>
 				</h:form>
