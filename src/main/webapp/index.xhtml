@@ -6,7 +6,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="title">
-		Gimnasio
+		Gimnacio
 	</ui:define>
 	<ui:define name="content">
     <div class="container">
@@ -27,11 +27,19 @@
 						</h:outputLink>
 					</h:panelGroup>
 					<h:panelGroup styleClass="flex-item" layout="block">
-						<h:outputLink styleClass="main-button" value="admSocio.xhtml">
+						<h:outputLink styleClass="main-button" value="admAdministrativo.xhtml">
 							<div class="round-btn">
 								<i class="fa fa-building fa-4x" aria-hidden="true"></i>
 							</div>
-							<p> Manejo de Empleados</p>
+							<p> Manejo Administrativos</p>
+						</h:outputLink>
+					</h:panelGroup>
+					<h:panelGroup styleClass="flex-item" layout="block">
+						<h:outputLink styleClass="main-button" value="admProfesor.xhtml">
+							<div class="round-btn">
+								<i class="fa fa-apple fa-4x" aria-hidden="true"></i>
+							</div>
+							<p> Manejo Profesores</p>
 						</h:outputLink>
 					</h:panelGroup>
 					<h:panelGroup styleClass="flex-item" layout="block">
