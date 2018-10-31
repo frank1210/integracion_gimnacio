@@ -7,8 +7,6 @@ public class Profesor extends Empleado{
 	
 	private int precioHs;
 	
-	private int horas;
-
 	public int getPrecioHs() {
 		return precioHs;
 	}
@@ -17,13 +15,4 @@ public class Profesor extends Empleado{
 		this.precioHs = precioHs;
 	}
 
-	public int getHoras() {
-		return horas;
-	}
-
-	public void setHoras(int horas) {
-		this.horas = horas;
-	}
-	
-	
 }
