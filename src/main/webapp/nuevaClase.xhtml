@@ -41,7 +41,7 @@
 								<label>Tipo de clase</label>
 								<h:selectOneMenu value="#{claseMB.tipoDeClaseSeleccionada}"
 										styleClass="form-control">
-										<f:selectItems value="#{claseMB.tiposDeClase}"
+										<f:selectItems value="#{claseMB.tiposDeClases}"
 												var="abono"
 												itemValue="#{abono.id}" 
 												itemLabel="#{abono.nombre}"/>
@@ -51,7 +51,7 @@
 						<div class="row">
 							<div class="text-right">
 								<h:outputLink styleClass="btn btn-primary"
-									value="admClase.xhtml">Volver</h:outputLink>
+									value="admClases.xhtml">Volver</h:outputLink>
 								<h:commandLink
 									styleClass="btn btn-success"
 									action="#{claseMB.create()}"

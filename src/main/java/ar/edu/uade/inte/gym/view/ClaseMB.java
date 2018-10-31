@@ -34,10 +34,6 @@ public class ClaseMB implements Serializable{
 	
 	private long tipoDeClaseSeleccionada;
 	
-	private List<TipoDeClase> tiposDeClases;
-	
-	private List<Profesor> profesores;
-	
 	private Clase clase = new Clase();
 	
 	private boolean editMode;
@@ -50,13 +46,6 @@ public class ClaseMB implements Serializable{
 	
 	@Inject
 	private ClaseController claseController; 
-	
-	
-	@PostConstruct
-	public void init() {
-		tiposDeClases = tipoDeClaseController.getAll();
-		profesores = profesorController.getAll();
-	}
 	
 	public List<Clase> getAll() {
 		return claseController.getAll();
@@ -133,20 +122,13 @@ public class ClaseMB implements Serializable{
 	}
 
 	public List<TipoDeClase> getTiposDeClases() {
-		return tiposDeClases;
-	}
-
-	public void setTiposDeClases(List<TipoDeClase> tiposDeClases) {
-		this.tiposDeClases = tiposDeClases;
+		return tipoDeClaseController.getAll();
 	}
 
 	public List<Profesor> getProfesores() {
-		return profesores;
+		return profesorController.getAll();
 	}
 
-	public void setProfesores(List<Profesor> profesores) {
-		this.profesores = profesores;
-	}
 
 	public Clase getClase() {
 		return clase;
