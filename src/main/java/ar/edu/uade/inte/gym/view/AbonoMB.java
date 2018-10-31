@@ -45,5 +45,4 @@ public class AbonoMB implements Serializable {
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, null));
 	}
-
 }

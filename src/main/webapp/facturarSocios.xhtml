@@ -13,56 +13,46 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 text-center">
-                <h2>Manejo de Socios</h2>
+                <h2>Facturas Socios</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 text-right">
 	            <h:form>
-	               <div class="row">
-		               <h:commandLink styleClass="btn btn-success" action="#{socioMB.showCreateView()}">Nuevo Socio
-				 	      <i class="fa fa-plus"></i>
-				       </h:commandLink>
-	               </div>
-			       <div class="row">
-				      	<h:outputLink styleClass="btn btn-primary" value="facturarSocios.xhtml">Generar Facturas
-				        </h:outputLink>
-			       </div>
+			       <h:commandLink styleClass="btn btn-primary" value="#{admSocios.xhtml}"> Volver
+			       </h:commandLink>
 		       </h:form>	
             </div>  
         </div>
+
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
             	<h:form>
-				<h:dataTable value="#{socioMB.all}"  var = "socio" styleClass="table">
+				<h:dataTable value="#{facturaMB.all}"  var = "factura" styleClass="table">
 				   <h:column>    				
 				      <f:facet name = "header">id</f:facet>    				
-					  #{socio.id}
+					  #{factura.socio.id}
 				   </h:column>		
 				   <h:column>
 				      <f:facet name = "header">DNI</f:facet>
-					  #{socio.dni}
+					  #{factura.socio.dni}
 				   </h:column>					   
 				   <h:column>
 				      <f:facet name = "header">Nombre</f:facet>
-					 #{socio.nombre}
+					 #{factura.socio.nombre}
 				   </h:column>				   
 				   <h:column>
 				      <f:facet name = "header">Apellido</f:facet>
-					 #{socio.apellido}
-				   </h:column>		   
-				   <h:column>
-				      <f:facet name = "header">Email</f:facet>
-				       #{socio.mail}
-				   </h:column>			   
+					 #{factura.socio.apellido}
+				   </h:column>		   	   
 				   <h:column>
 				      <f:facet name = "header">Domicilio</f:facet>
-				       #{socio.domicilio}
+				       #{factura.socio.domicilio}
 				   </h:column>
 				   <h:column>
-				  	  <f:facet name = "header">Apto Fisico</f:facet>
-					  <h:selectBooleanCheckbox value="#{socio.aptoFisico}" disabled="true"/>
+				      <f:facet name = "header">Total</f:facet>
+				       #{factura.monto}
 				   </h:column>
 				   <h:column>
 				       <f:facet name = "header">Acciones</f:facet>

@@ -13,10 +13,19 @@ public class Factura {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private int numero;
-	
 	@ManyToOne
 	private Socio socio;
+	
+	private double monto;
+
+	
+	public double getMonto() {
+		return monto;
+	}
+
+	public void setMonto(double monto) {
+		this.monto = monto;
+	}
 
 	public long getId() {
 		return id;
@@ -24,14 +33,6 @@ public class Factura {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
 	}
 
 	public Socio getSocio() {

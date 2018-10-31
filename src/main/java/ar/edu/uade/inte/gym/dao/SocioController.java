@@ -14,4 +14,6 @@ public class SocioController extends EntityController<Socio>{
 		return Socio.class;
 	}
 	
+	
+	
 }
