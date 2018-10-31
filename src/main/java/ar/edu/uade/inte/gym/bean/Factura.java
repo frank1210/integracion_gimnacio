@@ -1,4 +1,4 @@
-package ar.edu.uade.inte.gym.model;
+package ar.edu.uade.inte.gym.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

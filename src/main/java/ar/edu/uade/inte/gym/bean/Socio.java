@@ -1,6 +1,7 @@
-package ar.edu.uade.inte.gym.model;
+package ar.edu.uade.inte.gym.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -16,11 +17,13 @@ public class Socio extends Persona implements Serializable{
 	private static final long serialVersionUID = 1635523978951895899L;
 
 	@ManyToMany
-	private List<Servicio> servicios;
+	private List<Servicio> servicios = new ArrayList<>();
 
 	@ManyToOne
 	private Abono abonos;
-
+	
+	private boolean aptoFisico;
+	
 	public List<Servicio> getServicios() {
 		return servicios;
 	}
@@ -36,5 +39,15 @@ public class Socio extends Persona implements Serializable{
 	public void setAbonos(Abono abonos) {
 		this.abonos = abonos;
 	}
+
+	public boolean isAptoFisico() {
+		return aptoFisico;
+	}
+
+	public void setAptoFisico(boolean aptoFisico) {
+		this.aptoFisico = aptoFisico;
+	}
+	
+	
 	
 }

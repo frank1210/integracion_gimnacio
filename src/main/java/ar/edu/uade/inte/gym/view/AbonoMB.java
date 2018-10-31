@@ -8,26 +8,26 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import ar.edu.uade.inte.gym.bean.Servicio;
-import ar.edu.uade.inte.gym.dao.ServicioController;
+import ar.edu.uade.inte.gym.bean.Abono;
+import ar.edu.uade.inte.gym.dao.AbonoController;
 import ar.edu.uade.inte.gym.exception.Invalid;
 
 @Named
 @SessionScoped
-public class ServicioMB {
+public class AbonoMB {
 
-	private Servicio servicio;
+	private Abono abono;
 
 	@Inject
-	private  ServicioController servicioController;
+	private  AbonoController abonoController;
 
-	public List<Servicio> getAll() {
-		return servicioController.getAll();
+	public List<Abono> getAll() {
+		return abonoController.getAll();
 	}
 
 	public String create() {
 		try {
-			servicioController.create(servicio);
+			abonoController.create(abono);
 		} catch (Invalid e) {
 			showError(e.getMessage());
 			return null;

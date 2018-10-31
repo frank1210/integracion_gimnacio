@@ -8,26 +8,26 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import ar.edu.uade.inte.gym.bean.Servicio;
-import ar.edu.uade.inte.gym.dao.ServicioController;
+import ar.edu.uade.inte.gym.bean.Socio;
+import ar.edu.uade.inte.gym.dao.SocioController;
 import ar.edu.uade.inte.gym.exception.Invalid;
 
 @Named
 @SessionScoped
-public class ServicioMB {
+public class SocioMB {
 
-	private Servicio servicio;
+	private Socio socio = new Socio();
 
 	@Inject
-	private  ServicioController servicioController;
+	private  SocioController socioController;
 
-	public List<Servicio> getAll() {
-		return servicioController.getAll();
+	public List<Socio> getAll() {
+		return socioController.getAll();
 	}
 
 	public String create() {
 		try {
-			servicioController.create(servicio);
+			socioController.create(socio);
 		} catch (Invalid e) {
 			showError(e.getMessage());
 			return null;
@@ -37,10 +37,21 @@ public class ServicioMB {
 		}
 		return null;
 	}
+	
 
 	private void showError(String msg) {
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, null));
 	}
+
+	public Socio getSocio() {
+		return socio;
+	}
+
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
+	
+	
 
 }

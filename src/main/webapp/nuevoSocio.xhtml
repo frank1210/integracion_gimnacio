@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="title">
+		Nuevo Socio
+	</ui:define>
+	<ui:define name="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 text-center">
+                <h2 id="titulo" class="text-center">Nuevo Socio</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+        	<h:form>
+				<h:messages styleClass="list-group"
+							warnClass="list-group-item list-group-item-danger"
+							errorClass="list-group-item list-group-item-danger"
+							infoClass="list-group-item list-group-item-success" />
+				<div class="row">
+				    <div class="col-md-6" style="">
+				    	<div class="form-group" >
+				            <label>Nombre</label>
+				            <h:inputText type="text"
+										 label="nombre"
+										 id="nombre" p:placeholder="" p:data-minlength="6"
+				            	value="#{socioMB.socio.nombre}"
+								styleClass="form-control" p:autocomplete="new-password"/>
+				        </div>
+				        <div class="form-group" >
+				            <label>DNI</label>
+				            <h:inputText p:type="text"
+										 label="dni"
+										 id="dni" p:placeholder=""
+				            	value="#{socioMB.socio.dni}"
+								styleClass="form-control"/>
+				        </div>
+				    </div>
+				    <div class="col-md-6" style="">
+				        <div class="form-group">
+				            <label>Apellido</label>
+				            <h:inputText type="text"
+										 label="apellido"
+										 id="apellido" p:placeholder=""
+				            	value="#{socioMB.socio.apellido}"
+								styleClass="form-control"/>
+				        </div>
+				        <div class="form-group" >
+				            <label>Email</label>
+				            <h:inputText p:type="email"
+										 label="mail"
+										 id="mail" p:placeholder=""
+				            	value="#{socioMB.socio.mail}"
+								styleClass="form-control"/>
+				        </div>			        
+				    </div>
+				    <div class="col-md-8" style="">
+				  		<div class="form-group" >
+				            <label>Domicilio</label>
+				            <h:inputText p:type="text"
+										 label="domicilio"
+										 id="domicilio" p:placeholder=""
+				            	value="#{socioMB.socio.domicilio}"
+								styleClass="form-control"/>
+				  	   </div>
+				    </div>
+				    <div class="col-md-4" style="">
+			            <label>
+			                <h:selectBooleanCheckbox value="#{socioMB.socio.aptoFisico}"/><span>Apto Fisico</span>
+			            </label>
+				    </div>	
+				</div>
+				<div class="row">
+					<div class="text-right">
+					<h:outputLink styleClass="btn btn-primary" value="admSocio.xhtml">Volver</h:outputLink>
+					<h:commandLink styleClass="btn btn-success" action="#{socioMB.create()}" p:data-click-on="enter">Guardar</h:commandLink>
+					</div>
+				</div>
+			</h:form>
+            </div>
+        </div>
+    </div>
+	</ui:define>
+</ui:composition>
+</html>

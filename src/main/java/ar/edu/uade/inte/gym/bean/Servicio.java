@@ -1,4 +1,4 @@
-package ar.edu.uade.inte.gym.model;
+package ar.edu.uade.inte.gym.bean;
 
 import java.io.Serializable;
 
@@ -19,6 +19,8 @@ public class Servicio implements Serializable{
 	private String nombre;
 	
 	private String descripcion;
+	
+	private double costo;
 
 	public long getId() {
 		return id;
@@ -26,6 +28,14 @@ public class Servicio implements Serializable{
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public double getCosto() {
+		return costo;
+	}
+
+	public void setCosto(double costo) {
+		this.costo = costo;
 	}
 
 	public String getNombre() {

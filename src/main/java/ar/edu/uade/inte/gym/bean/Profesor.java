@@ -1,4 +1,4 @@
-package ar.edu.uade.inte.gym.model;
+package ar.edu.uade.inte.gym.bean;
 
 import javax.persistence.Entity;
 
@@ -24,5 +24,6 @@ public class Profesor extends Empleado{
 	public void setHoras(int horas) {
 		this.horas = horas;
 	}
+	
 	
 }

@@ -1,4 +1,4 @@
-package ar.edu.uade.inte.gym.controller;
+package ar.edu.uade.inte.gym.dao;
 
 import java.io.Serializable;
 import java.util.List;

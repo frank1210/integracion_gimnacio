@@ -1,4 +1,4 @@
-package ar.edu.uade.inte.gym.model;
+package ar.edu.uade.inte.gym.bean;
 
 
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Empleado extends Persona{
+public abstract class Empleado extends Persona{
 	
 	private int nroEmpleado;
 	

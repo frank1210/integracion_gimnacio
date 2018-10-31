@@ -1,4 +1,4 @@
-package ar.edu.uade.inte.gym.service;
+package ar.edu.uade.inte.gym.serviceRest;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import ar.edu.uade.inte.gym.controller.ServicioController;
+import ar.edu.uade.inte.gym.bean.Servicio;
+import ar.edu.uade.inte.gym.dao.ServicioController;
 import ar.edu.uade.inte.gym.exception.Invalid;
-import ar.edu.uade.inte.gym.model.Servicio;
 
 @Path("servicio")
 public class ServiciosRest {

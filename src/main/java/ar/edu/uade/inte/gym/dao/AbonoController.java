@@ -1,8 +1,8 @@
-package ar.edu.uade.inte.gym.controller;
+package ar.edu.uade.inte.gym.dao;
 
 import javax.ejb.Stateless;
 
-import ar.edu.uade.inte.gym.model.Abono;
+import ar.edu.uade.inte.gym.bean.Abono;
 
 @Stateless
 public class AbonoController extends EntityController<Abono>{

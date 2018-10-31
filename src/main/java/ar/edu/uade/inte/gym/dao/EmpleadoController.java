@@ -1,8 +1,8 @@
-package ar.edu.uade.inte.gym.controller;
+package ar.edu.uade.inte.gym.dao;
 
 import javax.ejb.Stateless;
 
-import ar.edu.uade.inte.gym.model.Empleado;
+import ar.edu.uade.inte.gym.bean.Empleado;
 
 @Stateless
 public class EmpleadoController extends EntityController<Empleado>{
