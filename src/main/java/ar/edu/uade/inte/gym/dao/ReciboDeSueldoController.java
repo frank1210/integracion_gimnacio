@@ -5,8 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-
-import ar.edu.uade.inte.gym.bean.Abono;
+import ar.edu.uade.inte.gym.bean.Administrativo;
 import ar.edu.uade.inte.gym.bean.Clase;
 import ar.edu.uade.inte.gym.bean.Profesor;
 import ar.edu.uade.inte.gym.bean.ReciboDeSueldo;
@@ -22,6 +21,9 @@ public class ReciboDeSueldoController extends EntityController<ReciboDeSueldo>{
 	
 	@Inject
 	private ProfesorController profesorController;
+	
+	@Inject
+	private AdministrativoController administrativoController;
 	
 	
 	@Override
@@ -40,8 +42,14 @@ public class ReciboDeSueldoController extends EntityController<ReciboDeSueldo>{
 			}
 			ReciboDeSueldo rds = new ReciboDeSueldo();
 			rds.setEmpleado(profesor);
-			rds.setMonto(monto);
-			rds.setNumero(1);
+			rds.setMonto(profesor.getSueldoBasico() + monto);
+			create(rds);
+		}
+		List<Administrativo> administrativos = administrativoController.getAll();
+		for (Administrativo administrativo : administrativos) {
+			ReciboDeSueldo rds = new ReciboDeSueldo();
+			rds.setEmpleado(administrativo);
+			rds.setMonto(administrativo.getSueldoBasico());
 			create(rds);
 		}
 	}
